@@ -9,7 +9,7 @@ const forecast = (long, lat, callback) => {
         } else if (body.error) {
             callback(body.error.message, undefined)
         } else {
-            callback(undefined, `It is currently ${body.current.temp_c} degree in ${body.location.name}. There is ${body.forecast.forecastday[0].day.daily_will_it_rain}% chances of rain.`)
+            callback(undefined, `It is currently ${body.current.temp_c} degree in ${body.location.name}. There is ${body.forecast.forecastday[0].day.daily_will_it_rain}% chances of rain. The high is ${body.forecast.forecastday[0].day.maxtemp_c} degree and low is ${body.forecast.forecastday[0].day.mintemp_c} degree for today.`)
         }
     })
 }
